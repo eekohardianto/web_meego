@@ -2987,10 +2987,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Home(props) {
-  var unamex = props.unamex,
-      upassx = props.upassx;
+  var uname = props.uname,
+      upass = props.upass;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: ["Hi ", unamex, ", and pass ", upassx]
+    children: ["Hi ", uname, ", and pass ", upass]
   });
 }
 

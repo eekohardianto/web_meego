@@ -1,10 +1,10 @@
 import React from 'react'
 
 export default function Home(props) {
-    const {unamex, upassx} = props;
+    const {uname, upass} = props;
     return (
         <div>
-            Hi {unamex}, and pass {upassx}
+            Hi {uname}, and pass {upass} 
         </div>
     )
 }

@@ -6,7 +6,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home', [
-        'uname' => 'kidoh',
+        'uname' => 'kidohs',
         'upass' => 'xx11'
     ]);
 });
