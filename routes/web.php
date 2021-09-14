@@ -2,11 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-use Inertia\Inertia;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return Inertia::render('Home', [
-        'uname' => 'kidohs',
-        'upass' => 'xx11'
-    ]);
-});
+use App\Http\Controllers\LoginController;
+
+use App\Http\Controllers\DashboardController;
+
+
+Route::get('/', HomeController::class);
+
+Route::get('/dashboard', DashboardController::class);
+
+Route::get('/login', [LoginController::class, 'create']);
+
+Route::get('/login', [LoginController::class, 'store']);
