@@ -4,7 +4,7 @@ import Guest from '../../Layouts/Guest'
 
 export default function Register() {
     return (
-        <Guest title="Register">
+        <>
             <div className="card">
                 <div className="card-header">Register</div>
                 <div className="card-body">Register Form</div>
@@ -12,6 +12,8 @@ export default function Register() {
                     <Link className="link-dark text-decoration-none" href="/login">Login</Link>
                 </div>
             </div>
-        </Guest>
+        </>
     )
 }
+
+Register.layout = (page) => <Guest {...{ children: page, title: "Register" }}/>

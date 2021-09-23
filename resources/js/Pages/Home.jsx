@@ -4,7 +4,7 @@ import App from '../Layouts/App';
 export default function Home(props) {
     const {uname, upass} = props;
     return (
-        <App title="Parsinta">
+        <>
             <div className="container">
             <div className="card">
                 <div className="card-header">
@@ -17,6 +17,8 @@ export default function Home(props) {
             </div>
            
             
-        </App>
+        </>
     )
 }
+
+Home.layout = (page) => <App {...{ children: page, title: "Home" }}/>
