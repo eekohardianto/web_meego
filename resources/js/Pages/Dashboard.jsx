@@ -4,7 +4,16 @@ import App from '../Layouts/App'
 export default function Dashboard() {
     return (
         <App title="Dashboard">
-            ini dashboard
+            <div className="container">
+                <div className="card">
+                    <div className="card-header">
+                        Dashboard
+                    </div>
+                    <div className="card-body">
+                        details
+                    </div>
+                </div>
+            </div>
         </App>
     )
 }

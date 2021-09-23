@@ -5,9 +5,13 @@ import { Head } from '@inertiajs/inertia-react'
 export default function App({ children, title }) {
     return (
         <div>
+            
             <Head title={title}/>
             <Navbar/>
+            <div className="pt-4">
             {children}
+            </div>
+            
         </div>
     )
 }

@@ -5,7 +5,18 @@ export default function Home(props) {
     const {uname, upass} = props;
     return (
         <App title="Parsinta">
-            Hi {uname}, and pass {upass} 
+            <div className="container">
+            <div className="card">
+                <div className="card-header">
+                    hello world
+                </div>
+                <div className="card-body">
+                Hi {uname}, and pass {upass} 
+                </div>
+            </div>
+            </div>
+           
+            
         </App>
     )
 }
