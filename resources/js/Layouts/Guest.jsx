@@ -1,5 +1,5 @@
 import React from 'react'
-import { Head, Link } from '@inertiajs/inertia-react'
+import { Head } from '@inertiajs/inertia-react'
 
 export default function Guest({ children, title }) {
 return (
@@ -7,7 +7,7 @@ return (
 
     <Head title={`${title} | Parsinta`} />
     <div className="col-md-4">
-        <Link href="/">Logo</Link>
+       
         {children}
     </div>
 
