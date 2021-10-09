@@ -1,22 +1,21 @@
-import { Inertia } from '@inertiajs/inertia'
-import { Link } from '@inertiajs/inertia-react'
-import React, { useState } from 'react'
+import { Link, useForm } from '@inertiajs/inertia-react'
+import React from 'react'
 import Guest from '../../Layouts/Guest'
 
 export default function Login({ errors }) {
 
-    const [values, setValues] = useState({
-        email: '', password: '', remember: '',
+    const { data, setData, post } = useForm({
+        email: 'thomas.stokes@example.org', password: 'password', remember: '', 
     })
 
-    const changeHandler = (e) => setValues({...values, [e.target.id]: e.target.value})
+    const changeHandler = (e) => setData({...data, [e.target.id]: e.target.value})
 
     const submitHandler = (event) => {
         event.preventDefault()
-        Inertia.post('/login', values)
-        //console.log(values)
+        post('/login', data)
         
     }
+
 return (
 <>
     <div className="card">
@@ -26,16 +25,16 @@ return (
             <form onSubmit={submitHandler} noValidate>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
-                    <input type="email" value={values.email} onChange={changeHandler} name="email" id="email" className="form-control" />
+                    <input type="email" value={data.email} onChange={changeHandler} name="email" id="email" className="form-control" />
                     {errors && (<div className="text-danger mt-1">{errors.email}</div>)}
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" value={values.password} onChange={changeHandler} name="password" id="password" className="form-control" />
+                    <input type="password" value={data.password} onChange={changeHandler} name="password" id="password" className="form-control" />
                     {errors && (<div className="text-danger mt-1">{errors.password}</div>)}
                </div>
                 <div className="form-check mb-3">
-                    <input type="checkbox" value={values.email} onChange={(e) => setValues({...values, remember: e.target.checked})} className="form-check-input" name="remember" id="remember" />
+                    <input type="checkbox" value={data.remember} onChange={(e) => setData({...data, remember: e.target.checked})} className="form-check-input" name="remember" id="remember" />
                     <label className="form-check-label" htmlFor="remember">Remember Me</label>
                 </div>
                 <button type="submit" className="btn btn-primary">

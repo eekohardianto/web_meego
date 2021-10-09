@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from '@inertiajs/inertia-react'
 
-export default function Navbar() {
+export default function Navbar(props) {
+const { auth } = usePage().props;
 return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container">
@@ -21,14 +22,17 @@ return (
                 </li>
 
             </ul>
+
+            {auth.user != null ?
+
             <ul className="navbar-nav mb-2 mb-lg-0">
 
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        User name
+                        {auth.user.name}
                     </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href="#">Action</a></li>
                         <li><a className="dropdown-item" href="#">Another action</a></li>
                         <li>
@@ -39,6 +43,7 @@ return (
                 </li>
             </ul>
 
+            :
             <ul className="navbar-nav mb-2 mb-lg-0">
 
                 <li className="nav-item">
@@ -49,6 +54,8 @@ return (
                     <Link className="nav-link" href="/register">Register</Link>
                 </li>
             </ul>
+            }
+
         </div>
     </div>
 </nav>
