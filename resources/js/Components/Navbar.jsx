@@ -33,12 +33,12 @@ return (
                         {auth.user.name}
                     </a>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                        <li><a className="dropdown-item" href="#">Profile</a></li>
+                        <li><a className="dropdown-item" href="#">Settings</a></li>
                         <li>
                             <hr className="dropdown-divider" />
                         </li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                        <li><Link className="dropdown-item" as="button" method="post" href="/logout">Logout</Link></li>
                     </ul>
                 </li>
             </ul>
