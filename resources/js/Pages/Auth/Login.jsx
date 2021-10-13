@@ -12,7 +12,7 @@ export default function Login({ errors }) {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        post('/login', data)
+        post(route('login'), data)
         
     }
 
@@ -43,7 +43,7 @@ return (
             </form>
         </div>
         <div className="card-footer">
-            <Link className="link-dark text-decoration-none" href="/register">Register</Link>
+          Doesn't have an account ? <Link className="link-dark" href={route('register')}>Register</Link>
         </div>
     </div>
 </>
